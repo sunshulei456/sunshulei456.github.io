@@ -16,15 +16,15 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="权限基础1234567891011121314151617181920212223242526272829AlterAlter RoutineCreateCreate RoutineCreate Temporary TablesCreate UserCreate ViewDeleteDropEventExecuteFileGrant OptionIndexInsertLock TablesProc">
+    <meta name="description" content="历史   特性 MySQ系列    Foreign keys 3.23（针对InnoDB存储引擎）   Unions 4.0   Subqueries 4.1   R-trees 4.1（针对MyISAM 存储引擎）   Stored procedures 5.0   Views 5.0   Cursors 5.0   XA transactions 5.0   Foreign keys 5.1（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="About">
-<meta property="og:url" content="https://sunshulei456.github.io/2024/04/21/mysql/mysql%20%E6%9D%83%E9%99%90%E5%88%86%E7%A6%BB/index.html">
+<meta property="og:url" content="https://sunshulei456.github.io/2024/04/21/mysql/mysql%20%E5%BE%85%E6%B1%87%E6%80%BB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="权限基础1234567891011121314151617181920212223242526272829AlterAlter RoutineCreateCreate RoutineCreate Temporary TablesCreate UserCreate ViewDeleteDropEventExecuteFileGrant OptionIndexInsertLock TablesProc">
+<meta property="og:description" content="历史   特性 MySQ系列    Foreign keys 3.23（针对InnoDB存储引擎）   Unions 4.0   Subqueries 4.1   R-trees 4.1（针对MyISAM 存储引擎）   Stored procedures 5.0   Views 5.0   Cursors 5.0   XA transactions 5.0   Foreign keys 5.1（">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-04-20T16:38:00.000Z">
-<meta property="article:modified_time" content="2024-04-21T13:22:03.887Z">
+<meta property="article:modified_time" content="2024-04-21T13:21:52.870Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5 words
+          62 words
         
       </span>
     
@@ -306,16 +306,74 @@
 
 <article class="about-content page-content mt-5">
   <div class="markdown-body">
-    <h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs mysql">Alter<br>Alter Routine<br>Create<br>Create Routine<br>Create Temporary Tables<br>Create User<br>Create View<br>Delete<br>Drop<br>Event<br>Execute<br>File<br>Grant Option<br>Index<br>Insert<br>Lock Tables<br>Process<br>References<br>Reload<br>Replication Client<br>Replication Slave<br>Select<br>Show Databases<br>Show View<br>Shutdown<br>Super<br>Trigger<br>Update<br><br></code></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><br>Event<br><span class="hljs-keyword">Execute</span><br>File<br><span class="hljs-keyword">Grant</span> <span class="hljs-keyword">Option</span><br><span class="hljs-keyword">Index</span><br><br><span class="hljs-keyword">Lock</span> <span class="hljs-keyword">Tables</span><br>Process<br><span class="hljs-keyword">References</span><br>Reload<br><span class="hljs-keyword">Replication</span> Client<br><span class="hljs-keyword">Replication</span> Slave<br><br><br>Shutdown<br>Super<br><span class="hljs-keyword">Trigger</span><br><br><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="CURD"><a href="#CURD" class="headerlink" title="CURD"></a>CURD</h2><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">Create</span><br><span class="hljs-keyword">Create</span> <span class="hljs-keyword">Routine</span><br><span class="hljs-keyword">Create</span> <span class="hljs-keyword">Temporary</span> <span class="hljs-keyword">Tables</span><br><span class="hljs-keyword">Create</span> <span class="hljs-keyword">User</span><br><span class="hljs-keyword">Create</span> <span class="hljs-keyword">View</span><br><br><br><span class="hljs-keyword">Select</span><br><span class="hljs-keyword">Alter</span><br><span class="hljs-keyword">Alter</span> <span class="hljs-keyword">Routine</span><br><span class="hljs-keyword">Show</span> Databases<br><span class="hljs-keyword">Show</span> <span class="hljs-keyword">View</span><br><br><br><span class="hljs-keyword">Delete</span><br><span class="hljs-keyword">Drop</span><br><br><span class="hljs-keyword">Insert</span><br><br><span class="hljs-keyword">Update</span><br><br></code></pre></td></tr></table></figure>
-
+    <h1 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h1><table>
+<thead>
+<tr>
+<th><strong>特性</strong></th>
+<th><strong>MySQ系列</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Foreign keys</td>
+<td>3.23（针对InnoDB存储引擎）</td>
+</tr>
+<tr>
+<td>Unions</td>
+<td>4.0</td>
+</tr>
+<tr>
+<td>Subqueries</td>
+<td>4.1</td>
+</tr>
+<tr>
+<td>R-trees</td>
+<td>4.1（针对MyISAM 存储引擎）</td>
+</tr>
+<tr>
+<td>Stored procedures</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Views</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Cursors</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>XA transactions</td>
+<td>5.0</td>
+</tr>
+<tr>
+<td>Foreign keys</td>
+<td>5.1（在3.23中实施，对于InnoDB）</td>
+</tr>
+<tr>
+<td>Triggers</td>
+<td>5.0和5.1</td>
+</tr>
+<tr>
+<td>Full outer joins</td>
+<td>5.1</td>
+</tr>
+<tr>
+<td>Constraints</td>
+<td>5.1（在3.23中实施，对于InnoDB）</td>
+</tr>
+<tr>
+<td>Partitioning</td>
+<td>5.1</td>
+</tr>
+<tr>
+<td>Pluggable Storage Engine API</td>
+<td>5.1</td>
+</tr>
+<tr>
+<td>Row-Based Replication</td>
+<td>5.1</td>
+</tr>
+</tbody></table>
 
   </div>
 
