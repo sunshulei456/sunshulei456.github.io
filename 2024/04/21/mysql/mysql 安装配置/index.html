@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>mysql 安装配置 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="配置文件配置文加载顺序mysql 中的程序概述 mysqld 是 mysql的后台程序，即mysql服务器， 客户端通过连接服务器来访问数据库 123456789102. mysql-safe： mysql启动脚本3. mysql.server： mysql 启动脚本4. mysql_multi： mysql启动脚本，在服务器上停启多个服务器1. mysqld : mysql 的服务器2. mys">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql 安装配置">
+<meta property="og:url" content="https://sunshulei456.github.io/2024/04/21/mysql/mysql%20%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="配置文件配置文加载顺序mysql 中的程序概述 mysqld 是 mysql的后台程序，即mysql服务器， 客户端通过连接服务器来访问数据库 123456789102. mysql-safe： mysql启动脚本3. mysql.server： mysql 启动脚本4. mysql_multi： mysql启动脚本，在服务器上停启多个服务器1. mysqld : mysql 的服务器2. mys">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-20T16:38:00.000Z">
+<meta property="article:modified_time" content="2024-04-21T12:50:15.161Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sunshulei456.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-mysql/mysql 安装配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/21/mysql/mysql%20%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2024-04-20T16:38:00.000Z" itemprop="datePublished">2024-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      mysql 安装配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><h2 id="配置文加载顺序"><a href="#配置文加载顺序" class="headerlink" title="配置文加载顺序"></a>配置文加载顺序</h2><h1 id="mysql-中的程序"><a href="#mysql-中的程序" class="headerlink" title="mysql 中的程序"></a>mysql 中的程序</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li><p>mysqld 是 mysql的后台程序，即mysql服务器， 客户端通过连接服务器来访问数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">2. mysql-safe： mysql启动脚本</span><br><span class="line">3. mysql.server： mysql 启动脚本</span><br><span class="line">4. mysql_multi： mysql启动脚本，在服务器上停启多个服务器</span><br><span class="line"></span><br><span class="line">1. mysqld : mysql 的服务器</span><br><span class="line">2. mysqld-max： 是 mysqld 的升级版，有更多的功能，是非稳定发布版</span><br><span class="line">3. mysql_install_db:</span><br><span class="line">	脚本用默认权限创建 mysql 授权版，通常只在首次安装 mysql 的时候执行一次</span><br><span class="line">4. mysql_fix_privilege_tables:</span><br><span class="line">	升级安装 mysql 后，如果新版本 mysql 的授权表有更改，则使用该脚本更改授权表</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mysql 一个命令行客户程序，用于交互式或者批处理模式执行 sql 语句</p>
+<ul>
+<li>mysql-admin 用于管理功能的客户程序</li>
+<li>mysql-check 执行表维护操作</li>
+<li>mysql-dimp, mysql-hot-copy 是数据库备份</li>
+<li>mysql-import 导入数据文件</li>
+<li>mysql- show 显示信息数据库和表的相关信息</li>
+<li>mysql-binlog 处理二进制日志文件的使用工具</li>
+<li>mysql-bug mysql缺陷报告脚本，可以用来向 mysql 邮件系统发送缺陷报告</li>
+</ul>
+</li>
+<li><p>myisam</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. myisam-chhk 执行表维护操作</span><br><span class="line"> 用来描述，检查，优化和维护 myisam 报的工具</span><br><span class="line"></span><br><span class="line">2. myisam-pack 产生压缩只读的表</span><br><span class="line">  </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><p>perror 显示错误代码的含义</p>
+</li>
+<li><p>make_binary_distribution</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">生成编译过的 mysql 的二进制版本，可以通过 ftp 上传到 ftp.mysql.com的/pub/mysql/upload/，供其它MySQL用户使用。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><h2 id="连接-mysql"><a href="#连接-mysql" class="headerlink" title="连接 mysql"></a>连接 mysql</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysql <span class="operator">-</span>h host <span class="operator">-</span>u <span class="keyword">user</span> <span class="operator">-</span>p</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql <span class="operator">-</span>h host <span class="operator">-</span>u <span class="operator">-</span>pprimeton self_database_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="e"><a href="#e" class="headerlink" title="-e"></a>-e</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="operator">-</span>e[<span class="comment">--execute]：  </span></span><br><span class="line">	<span class="number">1.</span> 用来将<span class="keyword">SQL</span>语句传递给服务器。</span><br><span class="line">	<span class="number">2.</span> 该语句必须用引号引起来(单引号或双引号)。(然而，如果想要在查询中将值引起来，则对于查询应使用双引号，查询中引用的值应使用单引号）。</span><br><span class="line">    <span class="number">3.</span> 当使用该选项时，语句被执行，然后mysql立即退出命令外壳。</span><br><span class="line">mysql <span class="operator">-</span>u root <span class="operator">-</span>pprimton <span class="operator">-</span>h host <span class="operator">-</span>e &quot;SELECT User, Host FROM User&quot; mysql</span><br><span class="line">                             </span><br><span class="line"># 长形式(<span class="comment">--execute)后面必须紧跟一个等号(=)。                             </span></span><br><span class="line">mysql <span class="operator">-</span>u root <span class="operator">-</span>p <span class="comment">--execute=&quot;SELECT Name FROM Country WHERE Name LIKE &#x27;AU%&#x27;;SELECT COUNT(*) FROM City&quot; world                             </span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="mysqld-max"><a href="#mysqld-max" class="headerlink" title="mysqld-max"></a>mysqld-max</h1><ul>
+<li>mysqld 的另一个版本，又有更多的特性</li>
+<li>【暂时用不到】</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="mysqld"><a href="#mysqld" class="headerlink" title="mysqld"></a>mysqld</h1><h2 id="启动脚本"><a href="#启动脚本" class="headerlink" title="启动脚本"></a>启动脚本</h2><table>
+<thead>
+<tr>
+<th>脚本</th>
+<th>读取配置组</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mysqld</td>
+<td>[mysqld]、[server]</td>
+<td></td>
+</tr>
+<tr>
+<td>mysqld_safe</td>
+<td>[mysqld]、[server]、[mysqld_safe]、[safe_mysqld]</td>
+<td></td>
+</tr>
+<tr>
+<td>mysql.server</td>
+<td>[mysqld]、[mysql.server]</td>
+<td></td>
+</tr>
+<tr>
+<td>嵌入式MySQL服务器</td>
+<td>[server]、[embedded]、[xxxxx_SERVER]</td>
+<td>其中xxxxx是服务器嵌入的应用程序名。</td>
+</tr>
+</tbody></table>
+<h2 id="常用参数"><a href="#常用参数" class="headerlink" title="常用参数"></a>常用参数</h2><h2 id="lower-case-tables-name"><a href="#lower-case-tables-name" class="headerlink" title="lower_case_tables_name"></a>lower_case_tables_name</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">lower_case_tables_name </span><br><span class="line">含义： MySQL中如何在硬盘上保存和使用表名和数据库名</span><br><span class="line"></span><br><span class="line"><span class="number">0</span></span><br><span class="line">	硬盘上保存表名和数据库名： 使用<span class="keyword">CREATE</span> <span class="keyword">TABLE</span>或<span class="keyword">CREATE</span> DATABASE语句指定的大小写</span><br><span class="line">	名称比较： 对大小写敏感</span><br><span class="line">	系统默认： unix</span><br><span class="line">	特点： 如果在大小写不敏感的文件系统上用<span class="comment">--lower-case-table-names=0强制设为0，并且使用不同的大小写访问MyISAM表名，会导致索引破坏。</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line">	硬盘上保存表名和数据库名： 统一使用小写</span><br><span class="line">	名称比较： 对大小写敏感</span><br><span class="line">	系统默认： windows, max os x</span><br><span class="line">	特点： 如果在大小写不敏感的文件系统上用<span class="comment">--lower-case-table-names=0强制设为0，并且使用不同的大小写访问MyISAM表名，会导致索引破坏。</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">	硬盘上保存表名和数据库名： 使用<span class="keyword">CREATE</span> <span class="keyword">TABLE</span>或<span class="keyword">CREATE</span> DATABASE语句指定的大小写</span><br><span class="line">	名称比较： 对大小写敏感</span><br><span class="line">	系统默认： </span><br><span class="line">	特点：</span><br><span class="line">      a。 虽然按照指定大小写保存，但是MySQL将它们转换为小写以便查找</span><br><span class="line">      b. 只在对大小写不敏感的文件系统上适用</span><br><span class="line"></span><br><span class="line">使用建议</span><br><span class="line"><span class="number">1.</span> 默认不动</span><br><span class="line">	缺点： 想要在对大小写敏感不同的文件系统的平台之间转移表，会遇到困难。例如，在Unix中，my_tables和MY_tables是两个不同的表，但在Windows中，这两个表名相同。</span><br><span class="line">	</span><br><span class="line"><span class="number">2.</span> 任何系统中都配置为 <span class="number">1</span> ， </span><br><span class="line">	缺点： 当使用<span class="keyword">SHOW</span> TABLES或<span class="keyword">SHOW</span> DATABASES时，看不出名字原来是用大写还是小写。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> unix 中配置为 <span class="number">1</span>， windows 中配置为 <span class="number">0</span></span><br><span class="line">    优势：可以保留数据库名和表名的大小写</span><br><span class="line">    缺点：必须确保在Windows中查询总是用正确大小写引用数据库名和表名</span><br><span class="line">    </span><br><span class="line">例外：</span><br><span class="line"><span class="number">1.</span> 使用InnoDB表，在任何平台上均应将lower_case_tables_name设置为<span class="number">1</span>，以强制将名转换为小写。</span><br><span class="line"><span class="number">2.</span> 在Unix中将lower_case_tables_name设置为<span class="number">1</span>之前，重启mysqld之前，必须先将旧的数据库名和表名转换为小写。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="mysqld-safe"><a href="#mysqld-safe" class="headerlink" title="mysqld_safe"></a>mysqld_safe</h1><ul>
+<li><p>unix 和  netware 中推荐使用这个来启动 mysql </p>
+</li>
+<li><p>mysqld_safe 会优先启动 mysqld_max, </p>
+</li>
+<li><p>所有在命令行中为<strong>mysqld_safe</strong>指定的选项被传递给<strong>mysqld</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  </span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>支持的选项</p>
+</li>
+</ul>
+<h1 id="mysqlManager"><a href="#mysqlManager" class="headerlink" title="mysqlManager"></a>mysqlManager</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sunshulei456.github.io/2024/04/21/mysql/mysql%20%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" data-id="clv9j5m820001f4tig1xhfu12" data-title="mysql 安装配置" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/04/21/mysql/mysql%20%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          mysql 函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/04/21/mysql/mysql%20%E6%9D%83%E9%99%90%E5%88%86%E7%A6%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mysql 权限分离</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/04/21/%E2%80%9C%E6%88%91%E7%9A%84%E6%96%B0%E5%B8%96%E5%AD%902%E2%80%9D/">“我的新帖子2”</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/21/%E2%80%9C%E6%88%91%E7%9A%84%E6%96%B0%E5%B8%96%E5%AD%90%E2%80%9D/">“我的新帖子”</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/21/mysql/mysql%20%E5%87%BD%E6%95%B0/">mysql 函数</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/21/mysql/mysql%20%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">mysql 安装配置</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/21/mysql/mysql%20%E6%9D%83%E9%99%90%E5%88%86%E7%A6%BB/">mysql 权限分离</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

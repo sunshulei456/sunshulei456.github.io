@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>mysql 函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="数学加减乘除12345678910111213141516171819202122232425262728293031323334353637383940ABS(X)  返回X 的绝对值。mysql&gt; SELECT ABS(-32);-&gt; 32EXP(X)  返回e的X乘方后的值(自然对数的底)。LN(X)   返回X 的自然对数,即, X 相对于基数e 的对数LOG(X)   若用一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql 函数">
+<meta property="og:url" content="https://sunshulei456.github.io/2024/04/21/mysql/mysql%20%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数学加减乘除12345678910111213141516171819202122232425262728293031323334353637383940ABS(X)  返回X 的绝对值。mysql&gt; SELECT ABS(-32);-&gt; 32EXP(X)  返回e的X乘方后的值(自然对数的底)。LN(X)   返回X 的自然对数,即, X 相对于基数e 的对数LOG(X)   若用一">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="f:\1=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\3=%E6%95%B0%E6%8D%AE%E5%BA%93\mysql\image-20231214202917605.png">
+<meta property="article:published_time" content="2024-04-20T16:38:00.000Z">
+<meta property="article:modified_time" content="2024-04-21T12:50:27.910Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="f:\1=%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0\3=%E6%95%B0%E6%8D%AE%E5%BA%93\mysql\image-20231214202917605.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://sunshulei456.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-mysql/mysql 函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2024/04/21/mysql/mysql%20%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2024-04-20T16:38:00.000Z" itemprop="datePublished">2024-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      mysql 函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h1><h2 id="加减乘除"><a href="#加减乘除" class="headerlink" title="加减乘除"></a>加减乘除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">ABS(X)  返回X 的绝对值。</span><br><span class="line">mysql&gt; SELECT ABS(-32);</span><br><span class="line">-&gt; 32</span><br><span class="line"></span><br><span class="line">EXP(X)  返回e的X乘方后的值(自然对数的底)。</span><br><span class="line">LN(X)   返回X 的自然对数,即, X 相对于基数e 的对数</span><br><span class="line">LOG(X)   若用一个参数调用，这个函数就会返回X 的自然对数。</span><br><span class="line">LOG(B,X) 若用两个参数进行调用，这个函数会返回X 对于任意基数B 的对数, LOG(B,X) 就相当于 LOG(X) / LOG(B)。</span><br><span class="line">LOG10(X)  返回X的基数为10的对数,LOG10(X)相当于LOG(10,X)。</span><br><span class="line">MOD(N,M) , N % M ,  N MOD M  </span><br><span class="line">	1. 模操作。返回N 被 M除后的余数。</span><br><span class="line">	2. MOD() 对于带有小数部分的数值也起作用， 它返回除法运算后的精确余数： </span><br><span class="line">PI()  返回 ϖ (pi)的值。默认的显示小数位数是7位,然而 MySQL内部会使用完全双精度</span><br><span class="line">POW(X,Y) , POWER(X,Y)  返回X 的Y乘方的结果值</span><br><span class="line">SIGN(X)   返回参数作为-1、 0或1的符号，该符号取决于X 的值为负、零或正</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SQRT(X)   返回非负数X 的二次方根</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT LOG(2,65536);</span><br><span class="line">-&gt; 16</span><br><span class="line">mysql&gt; SELECT MOD(34.5,3);</span><br><span class="line">-&gt; 1.5</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ACOS(X)  返回X 反余弦, 即, 余弦是X的值。若X 不在-1到 1的范围之内，则返回 NULL </span><br><span class="line">ASIN(X)  返回X 的反正弦，即，正弦为X 的值。若X  若X 不在-1到 1的范围之内，则返回 NULL </span><br><span class="line">ATAN(X)  返回X 的反正切，即，正切为X 的值</span><br><span class="line">ATAN(Y,X) , ATAN2(Y,X)  返回两个变量X 及Y的反正切。 它类似于 Y 或 X的反正切计算,  除非两个参数的符号均用于确定结果所在象限。</span><br><span class="line"></span><br><span class="line">COS(X)  返回X 的余弦，其中X在弧度上已知</span><br><span class="line">SIN(X)  返回X 正弦，其中 X 在弧度中被给定</span><br><span class="line">TAN(X)  返回X 的正切，其中X 在弧度中被给定</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">COT(X)  返回X 的余切</span><br><span class="line">DEGREES(X)  返回参数 X, 该参数由弧度被转化为度</span><br><span class="line">RADIANS(X)  返回由度转化为弧度的参数 X,  (注意 ϖ 弧度等于180度）。 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="取整"><a href="#取整" class="headerlink" title="取整"></a>取整</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">CEILING(X)  CEIL(X)  返回不小于X 的最小整数值。</span><br><span class="line">FLOOR(X)             返回不大于X的最大整数值 </span><br><span class="line">ROUND(X)   返回参数X, 其值接近于最近似的整数。</span><br><span class="line">ROUND(X,D)  在有两个参数的情况下，返回 X ，其值保留到小数点后D位，而第D位的保留方式为四舍五入。若要接保留X值小数点左边的D 位，可将 D 设为负值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT CEILING(1.23);</span><br><span class="line">-&gt; 2</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT CEIL(-1.23);</span><br><span class="line">-&gt; -1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">-------------------</span><br><span class="line">返回值的类型同 第一个自变量相同(假设它是一个整数、双精度数或小数)。这意味着对于一个整数参数,结果也是一个整数(无小数部分)。</span><br><span class="line"></span><br><span class="line">当第一个参数是十进制常数时，对于准确值参数，ROUND() 使用精密数学题库：</span><br><span class="line"></span><br><span class="line">对于准确值数字, ROUND() 使用“四舍五入” 或“舍入成最接近的数” 的规则:对于一个分数部分为 .5或大于 .5的值，正数则上舍入到邻近的整数值， 负数则下舍入临近的整数值。(换言之, 其舍入的方向是数轴上远离零的方向）。对于一个分数部分小于.5 的值，正数则下舍入下一个整数值，负数则下舍入邻近的整数值，而正数则上舍入邻近的整数值。 </span><br><span class="line">对于近似值数字，其结果根据C 库而定。在很多系统中，这意味着 ROUND()的使用遵循“舍入成最接近的偶数”的规则： 一个带有任何小数部分的值会被舍入成最接近的偶数整数。 </span><br><span class="line">以下举例说明舍入法对于精确值和近似值的不同之处： </span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT ROUND(2.5), ROUND(25E-1);</span><br><span class="line"></span><br><span class="line">+------------+--------------+</span><br><span class="line"></span><br><span class="line">| ROUND(2.5) | ROUND(25E-1) |</span><br><span class="line"></span><br><span class="line">+------------+--------------+</span><br><span class="line"></span><br><span class="line">| 3          |            2 |</span><br><span class="line"></span><br><span class="line">+------------+--------------+</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="循环冗余码校验"><a href="#循环冗余码校验" class="headerlink" title="循环冗余码校验"></a>循环冗余码校验</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CRC32(expr) </span><br><span class="line">计算循环冗余码校验值并返回一个 32比特无符号值。若参数为NULL ，则结果为 NULL。该参数应为一个字符串，而且在不是字符串的情况下会被作为字符串处理（若有可能）。 </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT CRC32(&#x27;MySQL&#x27;);</span><br><span class="line"></span><br><span class="line">        -&gt; 3259397556</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT CRC32(&#x27;mysql&#x27;);</span><br><span class="line"></span><br><span class="line">        -&gt; 2501908538</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="小数"><a href="#小数" class="headerlink" title="小数"></a>小数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">FORMAT(X,D)  将数字X 的格式写成&#x27;#,###,###.##&#x27;格式, 即保留小数点后 D位，而第D位的保留方式为四舍五入，然后将结果以字符串的形式返回</span><br><span class="line"></span><br><span class="line">TRUNCATE(X,D) </span><br><span class="line">	返回被舍去至小数点D位后的数字X。若D 的值为 0, 则结果不带有小数点或不带有小数部分。可以将D设为负数,若要截去(归零) X小数点左起第D位开始后面所有低位的值.  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT TRUNCATE(-1.999,1);</span><br><span class="line">-&gt; -1.9</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT TRUNCATE(122,-2);</span><br><span class="line"> -&gt; 100</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">RAND() RAND(N) </span><br><span class="line">	返回一个随机浮点值 v ，范围在 0 到1 之间 (即, 其范围为 0 ≤ v ≤ 1.0)。若已指定一个整数参数 N ，则它被用作种子值，用来产生重复序列。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1. 若要在i ≤ R ≤ j 这个范围得到一个随机整数R ，需要用到表达式 FLOOR(i + RAND() * (j – i + 1))。例如， 若要在7 到 12 的范围（包括7和12）内得到一个随机整数, 可使用以下语句：</span><br><span class="line">	SELECT FLOOR(7 + (RAND() * 6));</span><br><span class="line">2. 在ORDER BY语句中，不能使用一个带有RAND()值的列，原因是 ORDER BY 会计算列的多重时间。然而，可按照如下的随机顺序检索数据行： </span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * FROM tbl_name ORDER BY RAND();</span><br><span class="line"></span><br><span class="line">3. ORDER BY RAND()同 LIMIT 的结合从一组列中选择随机样本很有用：</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT * FROM table1, table2 WHERE a=b AND c&lt;d</span><br><span class="line"></span><br><span class="line">    -&gt; ORDER BY RAND() LIMIT 1000;</span><br><span class="line"></span><br><span class="line">注意，在WHERE语句中，WHERE每执行一次， RAND()就会被再计算一次。</span><br><span class="line"></span><br><span class="line">RAND()的作用不是作为一个精确的随机发生器，而是一种用来发生在同样的 MySQL版本的平台之间的可移动ad hoc随机数的快速方式。</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h1><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">返回各自当前日期或时间的函数在每次询问执行开始时计算一次。这意味着在一个单一询问中，对诸如NOW() 的函数多次访问总是会得到同样的结果(未达到我们的目的，单一询问也包括对存储程序或触发器和被该程序/触发器调用的所有子程序的调用 )。这项原则也适用于 CURDATE()、 CURTIME()、 UTC_DATE()、 UTC_TIME()、UTC_TIMESTAMP()，以及所有和它们意义相同的函数。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="current"><a href="#current" class="headerlink" title="current"></a>current</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-- 返回连接当前时区内的值，这个值可用作time_zone系统变量的值。</span><br><span class="line">current_timstamp(), current_timetamp</span><br><span class="line">current_time(), current_time</span><br><span class="line">  1. 将当前时间以&#x27;HH:MM:SS&#x27;或 HHMMSS 的格式返回， 具体格式根据函数用在字符串或是数字语境中而</span><br><span class="line">current_date() , CURRENT_DATE</span><br><span class="line">from_unixtime() </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="datediff"><a href="#datediff" class="headerlink" title="datediff"></a>datediff</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DATEDIFF(expr,expr2) </span><br><span class="line">DATEDIFF() 返回起始时间 expr和结束时间expr2之间的天数。Expr和expr2 为日期或 date-and-time 表达式。计算中只用到这些值的日期部分。 </span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DATEDIFF(&#x27;1997-12-31 23:59:59&#x27;,&#x27;1997-12-30&#x27;);</span><br><span class="line">-&gt; 1</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="day"><a href="#day" class="headerlink" title="day"></a>day</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">DAY(date) </span><br><span class="line">DAY() 和DAYOFMONTH()的意义相同。</span><br><span class="line"></span><br><span class="line">DAYNAME(date) </span><br><span class="line">返回date 对应的工作日名称。</span><br><span class="line"></span><br><span class="line">DAYOFMONTH(date) </span><br><span class="line">返回date 对应的该月日期，范围是从 1到31</span><br><span class="line"></span><br><span class="line">DAYOFWEEK(date) </span><br><span class="line">返回date (1 = 周日, 2 = 周一, ..., 7 = 周六)对应的工作日索引。这些索引值符合 ODBC标准。</span><br><span class="line"></span><br><span class="line">DAYOFYEAR(date) </span><br><span class="line">返回date 对应的一年中的天数，范围是从 1到366。</span><br><span class="line"></span><br><span class="line">LAST_DAY(date) </span><br><span class="line">获取一个日期或日期时间值，返回该月最后一天对应的值。若参数无效，则返回NULL。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DAYNAME(&#x27;1998-02-05&#x27;);</span><br><span class="line"> -&gt; &#x27;周四&#x27;</span><br><span class="line"> </span><br><span class="line">mysql&gt; SELECT DAYOFMONTH(&#x27;1998-02-03&#x27;);</span><br><span class="line">-&gt; 3</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DAYOFWEEK(&#x27;1998-02-03&#x27;);</span><br><span class="line">-&gt; 3</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DAYOFYEAR(&#x27;1998-02-03&#x27;);</span><br><span class="line">-&gt; 34</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT LAST_DAY(&#x27;2004-02-05&#x27;);</span><br><span class="line">-&gt; &#x27;2004-02-29&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT LAST_DAY(&#x27;2004-01-01 01:01:01&#x27;);</span><br><span class="line">&gt; &#x27;2004-01-31&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT LAST_DAY(&#x27;2003-03-32&#x27;);</span><br><span class="line">-&gt; NULL</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="获取时间日期中的值"><a href="#获取时间日期中的值" class="headerlink" title="获取时间日期中的值"></a>获取时间日期中的值</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">NOW() </span><br><span class="line">返回当前日期和时间值，其格式为 &#x27;YYYY-MM-DD HH:MM:SS&#x27; 或YYYYMMDDHHMMSS ， 具体格式取决于该函数是否用在字符串中或数字语境中。 </span><br><span class="line">1. 在一个存储程序或触发器内, NOW() 返回一个常数时间，该常数指示了该程序或触发语句开始执行的时间。这同SYSDATE()的运行有所不同。</span><br><span class="line"></span><br><span class="line">MONTHNAME(date) </span><br><span class="line">返回date 对应月份的全名。 </span><br><span class="line"> </span><br><span class="line">MONTH(date) </span><br><span class="line">返回date 对应的月份，范围时从 1 到 12。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">DATE(expr) </span><br><span class="line">提取日期或时间日期表达式expr中的日期部分</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">HOUR(time) </span><br><span class="line">返回time 对应的小时数。对于日时值的返回值范围是从 0 到 23 。</span><br><span class="line"></span><br><span class="line">MINUTE(time) </span><br><span class="line">返回 time 对应的分钟数,范围是从 0 到 59。</span><br><span class="line"></span><br><span class="line">MICROSECOND(expr) </span><br><span class="line">从时间或日期时间表达式expr返回微秒值，其数字范围从 0到 999999</span><br><span class="line"></span><br><span class="line">--------------</span><br><span class="line">mysql&gt; SELECT NOW();</span><br><span class="line">-&gt; &#x27;1997-12-15 23:50:26&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT MONTHNAME(&#x27;1998-02-05&#x27;);</span><br><span class="line">-&gt; &#x27;February &#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT MONTH(&#x27;1998-02-03&#x27;);</span><br><span class="line">-&gt; 2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DATE(&#x27;2003-12-31 01:02:03&#x27;);</span><br><span class="line">-&gt; &#x27;2003-12-31&#x27;</span><br><span class="line"></span><br><span class="line">-- 然而,  TIME 值的范围实际上非常大, 所以HOUR可以返回大于23的值。</span><br><span class="line">mysql&gt; SELECT HOUR(&#x27;10:05:03&#x27;);</span><br><span class="line">-&gt; 10</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT MINUTE(&#x27;98-02-03 10:05:03&#x27;);</span><br><span class="line">-&gt; 5</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT MICROSECOND(&#x27;12:00:00.123456&#x27;);</span><br><span class="line">-&gt; 123456</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="日期时间增减"><a href="#日期时间增减" class="headerlink" title="日期时间增减"></a>日期时间增减</h2><h3 id="adddate"><a href="#adddate" class="headerlink" title="adddate"></a>adddate</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ADDDATE(expr,days)  </span><br><span class="line"></span><br><span class="line">-- 若 days 参数只是整数值，则 MySQL 5.1将其作为天数值添加至 expr。 </span><br><span class="line">mysql&gt; SELECT ADDDATE(&#x27;1998-01-02&#x27;, 31);</span><br><span class="line">-&gt; &#x27;1998-02-02&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="addtime"><a href="#addtime" class="headerlink" title="addtime"></a>addtime</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ADDTIME(expr,expr2) </span><br><span class="line">ADDTIME()将 expr2添加至expr 然后返回结果。 expr 是一个时间或时间日期表达式，而expr2 是一个时间表达式。 </span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT ADDTIME(&#x27;1997-12-31 23:59:59.999999&#x27;, &#x27;1 1:1:1.000002&#x27;);</span><br><span class="line">-&gt; &#x27;1998-01-02 01:01:01.000001&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="date-add"><a href="#date-add" class="headerlink" title="date_add"></a>date_add</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">ADDDATE(date,INTERVAL expr type)</span><br><span class="line">DATE_ADD(date,INTERVAL expr type)</span><br><span class="line">DATE_SUB(date,INTERVAL expr type) </span><br><span class="line"></span><br><span class="line">-- 关键词INTERVA及 type 分类符均不区分大小写。 </span><br><span class="line">date 是一个 DATETIME 或DATE值，用来指定起始时间。</span><br><span class="line">expr 是一个表达式，用来指定从起始日期添加或减去的时间间隔值。  </span><br><span class="line">Expr是一个字符串;对于负值的时间间隔，它可以以一个 ‘-’开头。</span><br><span class="line">type 为关键词，它指示了表达式被解释的方式。</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> -- 若位于另一端的表达式是一个日期或日期时间值 ， 则INTERVAL expr type只允许在 + 操作符的两端。</span><br><span class="line"> -- 对于 –操作符，  INTERVAL expr type 只允许在其右端，原因是从一个时间间隔中提取一个日期或日期时间值是毫无意义的</span><br><span class="line"> mysql&gt; SELECT DATE_ADD(&#x27;1998-01-02&#x27;, INTERVAL 31 DAY);</span><br><span class="line">-&gt; &#x27;1998-02-02&#x27;x`</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT &#x27;1997-12-31 23:59:59&#x27; + INTERVAL 1 SECOND;</span><br><span class="line">-&gt; &#x27;1998-01-01 00:00:00&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT &#x27;1998-01-01&#x27; - INTERVAL 1 SECOND;</span><br><span class="line">-&gt; &#x27;1997-12-31 23:59:59&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DATE_ADD(&#x27;1997-12-31 23:59:59&#x27;, INTERVAL 1 DAY);</span><br><span class="line">-&gt; &#x27;1998-01-01 23:59:59&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DATE_SUB(&#x27;1998-01-01 00:00:00&#x27;, INTERVAL &#x27;1 1:1:1&#x27; DAY_SECOND);</span><br><span class="line">-&gt; &#x27;1997-12-30 22:58:59&#x27;</span><br><span class="line"></span><br><span class="line">-- 注意</span><br><span class="line">1. 【尽量使用标准的格式】</span><br><span class="line">若你指定了一个过于短的时间间隔值 (不包括type 关键词所预期的所有时间间隔部分), MySQL 假定你已经省去了时间间隔值的最左部分。 例如，你指定了一种类型的DAY_SECOND, expr 的值预期应当具有天、 小时、分钟和秒部分。若你指定了一个类似 &#x27;1:10&#x27;的值, MySQL 假定天和小时部分不存在，那么这个值代表分和秒。换言之, &#x27;1:10&#x27; DAY_SECOND 被解释为相当于 &#x27;1:10&#x27; MINUTE_SECOND。这相当于 MySQL将TIME 值解释为所耗费的时间而不是日时的解释方式。</span><br><span class="line"></span><br><span class="line">2. 假如你对一个日期值添加或减去一些含有时间部分的内容，则结果自动转化为一个日期时间值：</span><br><span class="line">mysql&gt; SELECT DATE_ADD(&#x27;1999-01-01&#x27;, INTERVAL 1 HOUR);</span><br><span class="line"> -&gt; &#x27;1999-01-01 01:00:00&#x27;</span><br><span class="line"></span><br><span class="line">3. 假如你使用了格式严重错误的日期,则结果为 NULL。假如你添加了  MONTH、YEAR_MONTH或YEAR ，而结果日期中有一天的日期大于添加的月份的日期最大限度，则这个日期自动被调整为添加月份的最大日期：</span><br><span class="line">mysql&gt; SELECT DATE_ADD(&#x27;1998-01-30&#x27;, INTERVAL 1 MONTH);</span><br><span class="line">-&gt; &#x27;1998-02-28&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><em>type</em> <strong>值</strong></th>
+<th><strong>预期的</strong> <em>expr</em>  <strong>格式</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MICROSECOND</td>
+<td>MICROSECONDS</td>
+<td></td>
+</tr>
+<tr>
+<td>SECOND</td>
+<td>SECONDS</td>
+<td></td>
+</tr>
+<tr>
+<td>MINUTE</td>
+<td>MINUTES</td>
+<td></td>
+</tr>
+<tr>
+<td>HOUR</td>
+<td>HOURS</td>
+<td></td>
+</tr>
+<tr>
+<td>DAY</td>
+<td>DAYS</td>
+<td></td>
+</tr>
+<tr>
+<td>WEEK</td>
+<td>WEEKS</td>
+<td></td>
+</tr>
+<tr>
+<td>MONTH</td>
+<td>MONTHS</td>
+<td></td>
+</tr>
+<tr>
+<td>QUARTER</td>
+<td>QUARTERS</td>
+<td></td>
+</tr>
+<tr>
+<td>YEAR</td>
+<td>YEARS</td>
+<td></td>
+</tr>
+<tr>
+<td>SECOND_MICROSECOND</td>
+<td>‘SECONDS.MICROSECONDS’</td>
+<td></td>
+</tr>
+<tr>
+<td>MINUTE_MICROSECOND</td>
+<td>‘MINUTES.MICROSECONDS’</td>
+<td></td>
+</tr>
+<tr>
+<td>MINUTE_SECOND</td>
+<td>‘MINUTES:SECONDS’</td>
+<td></td>
+</tr>
+<tr>
+<td>HOUR_MICROSECOND</td>
+<td>‘HOURS.MICROSECONDS’</td>
+<td></td>
+</tr>
+<tr>
+<td>HOUR_SECOND</td>
+<td>‘HOURS:MINUTES:SECONDS’</td>
+<td></td>
+</tr>
+<tr>
+<td>HOUR_MINUTE</td>
+<td>‘HOURS:MINUTES’</td>
+<td></td>
+</tr>
+<tr>
+<td>DAY_MICROSECOND</td>
+<td>‘DAYS.MICROSECONDS’</td>
+<td></td>
+</tr>
+<tr>
+<td>DAY_SECOND</td>
+<td>‘DAYS HOURS:MINUTES:SECONDS’</td>
+<td></td>
+</tr>
+<tr>
+<td>DAY_MINUTE</td>
+<td>‘DAYS HOURS:MINUTES’</td>
+<td></td>
+</tr>
+<tr>
+<td>DAY_HOUR</td>
+<td>‘DAYS HOURS’</td>
+<td></td>
+</tr>
+<tr>
+<td>YEAR_MONTH</td>
+<td>‘YEARS-MONTHS’</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="extract"><a href="#extract" class="headerlink" title="extract"></a>extract</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">EXTRACT(type FROM date) </span><br><span class="line">EXTRACT()函数所使用的时间间隔类型说明符同 DATE_ADD()或DATE_SUB()的相同,但它从日期中提取其部分，而不是执行日期运算。  </span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT EXTRACT(YEAR FROM &#x27;1999-07-02&#x27;);</span><br><span class="line">-&gt; 1999</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT EXTRACT(YEAR_MONTH FROM &#x27;1999-07-02 01:02:03&#x27;);</span><br><span class="line">-&gt; 199907</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="时间格式化"><a href="#时间格式化" class="headerlink" title="时间格式化"></a>时间格式化</h2><h3 id="date-formate"><a href="#date-formate" class="headerlink" title="date_formate"></a>date_formate</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">DATE_FORMAT(date,format) </span><br><span class="line">根据format 字符串安排date 值的格式。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">注意：</span><br><span class="line">1. 月份和日期说明符的范围从零开始，原因是 MySQL允许存储诸如 &#x27;2004-00-00&#x27;的不完全日期. </span><br><span class="line">2. </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DATE_FORMAT(&#x27;1997-10-04 22:23:00&#x27;, &#x27;%W %M %Y&#x27;);</span><br><span class="line">-&gt; &#x27;Saturday October 1997&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DATE_FORMAT(&#x27;1997-10-04 22:23:00&#x27;,  &#x27;%H %k %I %r %T %S %w&#x27;);</span><br><span class="line">-&gt; &#x27;22 22 10 10:23:00 PM 22:23:00 00 6&#x27;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><strong>明符</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%a</td>
+<td>工作日的缩写名称 (Sun..Sat)</td>
+</tr>
+<tr>
+<td>%b</td>
+<td>月份的缩写名称  (Jan..Dec)</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>月份，数字形式(0..12)</td>
+</tr>
+<tr>
+<td>%D</td>
+<td>带有英语后缀的该月日期 (0th,  1st, 2nd,  3rd, …)</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>该月日期, 数字形式  (00..31)</td>
+</tr>
+<tr>
+<td>%e</td>
+<td>该月日期,  数字形式(0..31)</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>微秒  (000000..999999)</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>小时(00..23)</td>
+</tr>
+<tr>
+<td>%h</td>
+<td>小时(01..12)</td>
+</tr>
+<tr>
+<td>%I</td>
+<td>小时  (01..12)</td>
+</tr>
+<tr>
+<td>%i</td>
+<td>分钟,数字形式  (00..59)</td>
+</tr>
+<tr>
+<td>%j</td>
+<td>一年中的天数  (001..366)</td>
+</tr>
+<tr>
+<td>%k</td>
+<td>小时  (0..23)</td>
+</tr>
+<tr>
+<td>%l</td>
+<td>小时  (1..12)</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>月份名称  (January..December)</td>
+</tr>
+<tr>
+<td>%m</td>
+<td>月份, 数字形式  (00..12)</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>上午（AM）或下午（  PM）</td>
+</tr>
+<tr>
+<td>%r</td>
+<td>时间 , 12小时制  (小时hh:分钟mm:秒数ss  后加  AM或PM)</td>
+</tr>
+<tr>
+<td>%S</td>
+<td>秒  (00..59)</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>秒  (00..59)</td>
+</tr>
+<tr>
+<td>%T</td>
+<td>时间 , 24小时制  (小时hh:分钟mm:秒数ss)</td>
+</tr>
+<tr>
+<td>%U</td>
+<td>周  (00..53),  其中周日为每周的第一天</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>周  (00..53),  其中周一为每周的第一天</td>
+</tr>
+<tr>
+<td>%V</td>
+<td>周  (01..53),  其中周日为每周的第一天 ; 和  %X同时使用</td>
+</tr>
+<tr>
+<td>%v</td>
+<td>周  (01..53),  其中周一为每周的第一天 ; 和  %x同时使用</td>
+</tr>
+<tr>
+<td>%W</td>
+<td>工作日名称  (周日..周六)</td>
+</tr>
+<tr>
+<td>%w</td>
+<td>一周中的每日  (0&#x3D;周日..6&#x3D;周六)</td>
+</tr>
+<tr>
+<td>%X</td>
+<td>该周的年份，其中周日为每周的第一天,  数字形式,4位数;和%V同时使用</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>该周的年份，其中周一为每周的第一天,  数字形式,4位数;和%v同时使用</td>
+</tr>
+<tr>
+<td>%Y</td>
+<td>年份,  数字形式,4位数</td>
+</tr>
+<tr>
+<td>%y</td>
+<td>年份, 数字形式  (2位数)</td>
+</tr>
+<tr>
+<td>%%</td>
+<td>‘%’文字字符</td>
+</tr>
+</tbody></table>
+<h3 id="get-formate"><a href="#get-formate" class="headerlink" title="get_formate"></a>get_formate</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">GET_FORMAT(DATE|TIME|DATETIME, &#x27;EUR&#x27;|&#x27;USA&#x27;|&#x27;JIS&#x27;|&#x27;ISO&#x27;|&#x27;INTERNAL&#x27;) </span><br><span class="line">参数1： date, time, datetime</span><br><span class="line">参数2： eur, usa, jis, iso, internal</span><br><span class="line"></span><br><span class="line">注意</span><br><span class="line">1. ISO 格式为ISO 9075, 而非ISO 8601</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT DATE_FORMAT(&#x27;2003-10-03&#x27;,GET_FORMAT(DATE,&#x27;EUR&#x27;));</span><br><span class="line">-&gt; &#x27;03.10.2003&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT STR_TO_DATE(&#x27;10.31.2003&#x27;,GET_FORMAT(DATE,&#x27;USA&#x27;));</span><br><span class="line"> -&gt; &#x27;2003-10-31&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th><strong>函数调用</strong></th>
+<th><strong>结果</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GET_FORMAT(DATE,’USA’)</td>
+<td>‘%m.%d.%Y’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATE,’JIS’)</td>
+<td>‘%Y-%m-%d’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATE,’ISO’)</td>
+<td>‘%Y-%m-%d’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATE,’EUR’)</td>
+<td>‘%d.%m.%Y’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATE,’INTERNAL’)</td>
+<td>‘%Y%m%d’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATETIME,’USA’)</td>
+<td>‘%Y-%m-%d-%H.%i.%s’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATETIME,’JIS’)</td>
+<td>‘%Y-%m-%d %H:%i:%s’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATETIME,’ISO’)</td>
+<td>‘%Y-%m-%d %H:%i:%s’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATETIME,’EUR’)</td>
+<td>‘%Y-%m-%d-%H.%i.%s’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(DATETIME,’INTERNAL’)</td>
+<td>‘%Y%m%d%H%i%s’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(TIME,’USA’)</td>
+<td>‘%h:%i:%s %p’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(TIME,’JIS’)</td>
+<td>‘%H:%i:%s’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(TIME,’ISO’)</td>
+<td>‘%H:%i:%s’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(TIME,’EUR’)</td>
+<td>‘%H.%i.%S’</td>
+</tr>
+<tr>
+<td>GET_FORMAT(TIME,’INTERNAL’)</td>
+<td>‘%H%i%s’</td>
+</tr>
+</tbody></table>
+<h2 id="convert-tz"><a href="#convert-tz" class="headerlink" title="convert_tz"></a>convert_tz</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CONVERT_TZ(dt,from_tz,to_tz) </span><br><span class="line">CONVERT_TZ() 将时间日期值dt 从from_tz 给出的时区转到to_tz给出的时区，然后返回结果值。关于可能指定的时区的详细论述，请参见5.10.8节，“MySQL服务器时区支持”。若自变量无效，则这个函数会返回 NULL。</span><br><span class="line"></span><br><span class="line">1. 在从若from_tz 到UTC的转化过程中，该值超出 TIMESTAMP 类型的被支持范围，那么转化不会发生。关于 TIMESTAMP 范围的论述，请参见11.1.2节，“日期和时间类型概述”。 </span><br><span class="line">2. 若要使用诸如 &#x27;MET&#x27;或 &#x27;Europe/Moscow&#x27;之类的指定时间区，首先要设置正确的时区表</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT CONVERT_TZ(&#x27;2004-01-01 12:00:00&#x27;,&#x27;GMT&#x27;,&#x27;MET&#x27;);</span><br><span class="line"></span><br><span class="line">        -&gt; &#x27;2004-01-01 13:00:00&#x27;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="时间戳"><a href="#时间戳" class="headerlink" title="时间戳"></a>时间戳</h2><h3 id="from-day"><a href="#from-day" class="headerlink" title="from_day"></a>from_day</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">FROM_DAYS(N) </span><br><span class="line">给定一个天数  N, 返回一个DATE值。</span><br><span class="line"></span><br><span class="line">-- 使用 FROM_DAYS()处理古老日期时，务必谨慎。他不用于处理阳历出现前的日期(1582)。</span><br><span class="line">mysql&gt; SELECT FROM_DAYS(729669);</span><br><span class="line">-&gt; &#x27;1997-10-07&#x27;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="from-unixtime"><a href="#from-unixtime" class="headerlink" title="from_unixtime"></a>from_unixtime</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">FROM_UNIXTIME(unix_timestamp) ,</span><br><span class="line">FROM_UNIXTIME(unix_timestamp,format) </span><br><span class="line"></span><br><span class="line">返回&#x27;YYYY-MM-DD HH:MM:SS&#x27;或YYYYMMDDHHMMSS 格式值的unix_timestamp参数表示，具体格式取决于该函数是否用在字符串中或是数字语境中。 </span><br><span class="line">若format 已经给出，则结果的格式是根据format 字符串而定。 format 可以包含同DATE_FORMAT() 函数输入项列表中相同的说明符。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT FROM_UNIXTIME(875996580);</span><br><span class="line">-&gt; &#x27;1997-10-04 22:23:00&#x27;</span><br><span class="line">mysql&gt; SELECT FROM_UNIXTIME(UNIX_TIMESTAMP(), &#x27;%Y %D %M %h:%i:%s %x&#x27;);</span><br><span class="line">-&gt; &#x27;2003 6th August 06:22:58 2003&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">LOCALTIME, LOCALTIME() </span><br><span class="line">LOCALTIME 及 LOCALTIME()和NOW()具有相同意义。</span><br><span class="line"></span><br><span class="line">LOCALTIMESTAMP, LOCALTIMESTAMP() </span><br><span class="line">LOCALTIMESTAMP和LOCALTIMESTAMP()和NOW()具有相同意义。</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建时间"><a href="#创建时间" class="headerlink" title="创建时间"></a>创建时间</h2><h3 id="make-date"><a href="#make-date" class="headerlink" title="make_date"></a>make_date</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">MAKEDATE(year,dayofyear) </span><br><span class="line">给出年份值和一年中的天数值，返回一个日期。dayofyear 必须大于 0 ，否则结果为 NULL。</span><br><span class="line"></span><br><span class="line">MAKETIME(hour,minute,second) </span><br><span class="line">返回由hour、 minute和second 参数计算得出的时间值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT MAKEDATE(2001,31), MAKEDATE(2001,32);</span><br><span class="line">-&gt; &#x27;2001-01-31&#x27;, &#x27;2001-02-01&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT MAKETIME(12,15,30);</span><br><span class="line">-&gt; &#x27;12:15:30&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+<h1 id="mysql类型转换"><a href="#mysql类型转换" class="headerlink" title="mysql类型转换"></a>mysql类型转换</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MySQL 会自动将数字转化为字符串，反之亦然。 </span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT 1+&#x27;1&#x27;;</span><br><span class="line"></span><br><span class="line">        -&gt; 2</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT CONCAT(2,&#x27; test&#x27;);</span><br><span class="line"></span><br><span class="line">        -&gt; &#x27;2 test&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h1><h2 id="转为字符串"><a href="#转为字符串" class="headerlink" title="转为字符串"></a>转为字符串</h2><h3 id="cast"><a href="#cast" class="headerlink" title="cast"></a>cast</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">将数字明确地转化为字符串，可使用 CAST()或 CONCAT()函数：</span><br><span class="line"></span><br><span class="line">CAST() 比较可取。. </span><br><span class="line"></span><br><span class="line">若已经对一个字符串函数给定一个二进制字符串作为参数， 则所得到的结果字符串也是一个二进制字符串。一个转化为字符串的数字被作为二进制字符串对待。这仅会对比较结果产生影响</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><h2 id="load-file"><a href="#load-file" class="headerlink" title="load_file"></a>load_file</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">LOAD_FILE(file_name) </span><br><span class="line">读取服务器上的某个文件</span><br><span class="line">特点</span><br><span class="line">1. 件的位置必须在服务器上,你必须为文件制定路径全名，而且你还必须拥有FILE 特许权。文件必须可读取，文件容量必须小于 max_allowed_packet字节。 </span><br><span class="line">2. 若文件不存在，或因不满足上述条件而不能被读取， 则函数返回值为 NULL。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="format"><a href="#format" class="headerlink" title="format"></a>format</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FORMAT(X,D) </span><br><span class="line"> 将number X设置为格式 &#x27;#,###,###.##&#x27;, 以四舍五入的方式保留到小数点后D位, 而返回结果为一个字符串</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="char"><a href="#char" class="headerlink" title="char"></a>char</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">char(N, ...[unsigned charset]) </span><br><span class="line">	1. 将每个参数N理解为一个整数，其返回值为一个包含这些整数的代码值所给出的字符的字符串。NULL值被省略。 </span><br><span class="line">	select CHAR(77, 121, 83, 81, 76) -&gt; MySql</span><br><span class="line">    2. 	大于 255的CHAR()参数被转换为多结果字符</span><br><span class="line">	CHAR(256) 相当于 CHAR(1,0), </span><br><span class="line">	CHAR(256*256) 则相当于 CHAR(1,0,0)：  (1,0)*(1,0) = 1,0,0</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="compress"><a href="#compress" class="headerlink" title="compress"></a>compress</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">COMPRESS(string_to_compress) </span><br><span class="line">	压缩一个字符串</span><br><span class="line">UNCOMPRESS()</span><br><span class="line">	可将压缩过的字符串进行解压缩</span><br><span class="line">	</span><br><span class="line">存储方式</span><br><span class="line">	1. 空字符串按照空字符串存储。 </span><br><span class="line">	2. 非空字符串未压缩字符串的四字节长度进行存储(首先为低字节),后面是压缩字符串。如果字符串以空格结尾，就会在后加一个&quot;.&quot;号,以防止当结果值是存储在CHAR或VARCHAR类型的字段列时,出现自动把结尾空格去掉的现象。(不推荐使用 CHAR 或VARCHAR 来存储压缩字符串。最好使用一个 BLOB 列代替）。</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">mysql&gt; SELECT LENGTH(COMPRESS(&#x27;a&#x27;));</span><br><span class="line">-&gt; 13</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h2><h3 id="ord"><a href="#ord" class="headerlink" title="ord"></a>ord</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ORD(str) </span><br><span class="line">若字符串str 的最左字符是一个多字节字符，则返回该字符的代码， 代码的计算通过使用以下公式计算其组成字节的数值而得出: </span><br><span class="line"></span><br><span class="line">   (1st byte code)</span><br><span class="line">+ (2nd byte code × 256)</span><br><span class="line">+ (3rd byte code × 2562) ...</span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">假如最左字符不是一个多字节字符，那么 ORD()和函数ASCII()返回相同的值。</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT ORD(&#x27;2&#x27;);</span><br><span class="line"></span><br><span class="line">        -&gt; 50</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="查询索引元素"><a href="#查询索引元素" class="headerlink" title="查询索引元素"></a>查询索引元素</h2><h3 id="instr"><a href="#instr" class="headerlink" title="instr"></a>instr</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">INSTR(str,substr)</span><br><span class="line">含义：返回字符串 str 中子字符串的第一个出现位置</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT INSTR(&#x27;foobarbar&#x27;, &#x27;bar&#x27;);</span><br><span class="line">&gt; 4</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT INSTR(&#x27;xbar&#x27;, &#x27;foobar&#x27;);</span><br><span class="line">-&gt; 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="locate-1"><a href="#locate-1" class="headerlink" title="locate"></a>locate</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LOCATE(substr,str) </span><br><span class="line">	返回字符串 str中子字符串substr的第一个出现位置</span><br><span class="line">	不存在返回 0</span><br><span class="line">LOCATE(substr,str,pos) </span><br><span class="line">	返回字符串 str中子字符串substr的自 pos 位置往后的第一个出现位置</span><br><span class="line">	不存在返回 0</span><br><span class="line">	</span><br><span class="line">mysql&gt; SELECT LOCATE(&#x27;bar&#x27;, &#x27;foobarbar&#x27;);</span><br><span class="line">-&gt; 4</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT LOCATE(&#x27;xbar&#x27;, &#x27;foobar&#x27;);</span><br><span class="line">-&gt; 0</span><br><span class="line">	</span><br><span class="line">mysql&gt; SELECT LOCATE(&#x27;bar&#x27;, &#x27;foobarbar&#x27;,5);</span><br><span class="line">-&gt; 7</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POSITION(substr IN str)是 LOCATE(substr,str)同义词。</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="field"><a href="#field" class="headerlink" title="field"></a>field</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FIELD(str,str1,str2,str3,...) </span><br><span class="line">	获取 str 在 str1, str2, str3, ... 中的位置，从 1 开始</span><br><span class="line">参数</span><br><span class="line">	str=null 则返回 0， 原因是NULL不能同任何值进行同等比较</span><br><span class="line"></span><br><span class="line"># 找到 ej 在后面字符串中的位置， 找不到就返回 0</span><br><span class="line">mysql&gt; SELECT FIELD(&#x27;ej&#x27;, &#x27;Hej&#x27;, &#x27;ej&#x27;, &#x27;Heja&#x27;, &#x27;hej&#x27;, &#x27;foo&#x27;);</span><br><span class="line">-&gt; 2</span><br><span class="line">	</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<h3 id="find-in-set"><a href="#find-in-set" class="headerlink" title="find_in_set"></a>find_in_set</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FIND_IN_SET(str,strlist) </span><br><span class="line">  获取 str 在 strlist 中的第一个字符的索引位置</span><br><span class="line">str : </span><br><span class="line">	1.包含逗号会让函数无法运行</span><br><span class="line">	2. 值为 null 就会返回 null</span><br><span class="line">	3. str不在 strlist 中，或者 strlist 为空，则返回 0</span><br><span class="line">strlist : </span><br><span class="line">	1. 需要是一些被‘,’符号分开的字符串组成的字符串</span><br><span class="line">	2. 是 type set 列，则 该函数会被优化，使用比特计算</span><br><span class="line"></span><br><span class="line">案例</span><br><span class="line">mysql-&gt;select find_in_set(&#x27;b&#x27;, &#x27;a,b,c&#x27;)  </span><br><span class="line">-&gt;2</span><br><span class="line"></span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<h3 id="elt"><a href="#elt" class="headerlink" title="elt"></a>elt</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ELT(N,str1,str2,str3,...) </span><br><span class="line">	从 N 后面的参数中选择一个.</span><br><span class="line">	若N = 1，则返回值为  str1 ，若N = 2，则返回值为 str2 ，以此类推</span><br><span class="line">mysql-&gt;slect elt(1, &#x27;ej&#x27;， &#x27;foo&#x27;, &#x27;hkj&#x27;)</span><br><span class="line">-&gt;&#x27;ej&#x27;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="长度"><a href="#长度" class="headerlink" title="长度"></a>长度</h2><h3 id="length"><a href="#length" class="headerlink" title="length"></a>length</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">LENGTH(str) </span><br><span class="line">1. 返回值为字符串str 的长度，单位为字节</span><br><span class="line">2. 对于一个包含5个2字节字符的字符串， LENGTH() 的返回值为 10, 而 CHAR_LENGTH()的返回值则为5。</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT LENGTH(&#x27;text&#x27;);</span><br><span class="line">&gt; 4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="char-length"><a href="#char-length" class="headerlink" title="char_length"></a>char_length</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CHAR_LENGTH(str)  </span><br><span class="line">	返回值为字符串str 的长度，长度的单位为字符。一个多字节字符算作一个单字符</span><br><span class="line"></span><br><span class="line">注意： </span><br><span class="line">	对于一个包含五个二字节字符集, LENGTH()返回值为 10, 而CHAR_LENGTH()的返回值为5。</span><br></pre></td></tr></table></figure>
+
+<h3 id="character-length"><a href="#character-length" class="headerlink" title="character_length"></a>character_length</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CHARACTER_LENGTH(str) 就是  char_length</span><br></pre></td></tr></table></figure>
+
+<h3 id="bit-length-str"><a href="#bit-length-str" class="headerlink" title="bit_length(str)"></a>bit_length(str)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bit_length(str)  返回二进制字符串的长度， 即将 str 的二进制形式的长度</span><br></pre></td></tr></table></figure>
+
+<h3 id="octet-length"><a href="#octet-length" class="headerlink" title="octet_length"></a>octet_length</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">OCTET_LENGTH() 是 LENGTH()的同义词。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h2><h3 id="ASCII-str"><a href="#ASCII-str" class="headerlink" title="ASCII(str)"></a>ASCII(str)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">CAST()函数将某个值转为另外一种类型。 使用CONVERT()将字符串值转为不同的字符集</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ASCII(str) : 获取 str 的 ascii 码值</span><br><span class="line">	str=null, 返回为 null</span><br><span class="line">	str=空字符， 返回为 0</span><br><span class="line">	str 适用： 带有从 0到255的数值的字符。</span><br><span class="line">	</span><br><span class="line">案例</span><br><span class="line">	ascii(&#x27;2&#x27;) ==&gt; 50</span><br><span class="line">	ascii(2) ==&gt; 50</span><br><span class="line">	</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="bin-N"><a href="#bin-N" class="headerlink" title="bin(N)"></a>bin(N)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">结果： 返回 N 的二进制的字符串表示</span><br><span class="line">参数：</span><br><span class="line">	1. N 为一个longlong (BIGINT) 数字</span><br><span class="line">	2. 为 null 则返回 null</span><br><span class="line">	</span><br><span class="line">案例</span><br><span class="line">mysql&gt;select bin(12)</span><br><span class="line">-&gt;&#x27;1100&#x27;</span><br><span class="line"></span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="conv"><a href="#conv" class="headerlink" title="conv"></a>conv</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CONV(N,from_base,to_base) </span><br><span class="line">	将 from_base 进制的 N 转换为 to_base 进制的数</span><br><span class="line">	1. 参数中不能有 null ,否则返回 null</span><br><span class="line">	2. 支持的进制为 [2, 36]</span><br><span class="line"></span><br><span class="line">mysql-&gt;select conv(&#x27;a&#x27;，16,2)</span><br><span class="line">-&gt;&#x27;1010&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="oct"><a href="#oct" class="headerlink" title="oct"></a>oct</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">OCT(N) </span><br><span class="line">返回一个 N的八进制值的字符串表示，其中 N 是一个longlong (BIGINT)数。这等同于CONV(N,10,8)。若N 为 NULL ，则返回值为NULL。</span><br><span class="line"></span><br><span class="line">mysql-&gt;select oct(12)</span><br><span class="line">-&gt;&#x27;14&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="unhex"><a href="#unhex" class="headerlink" title="unhex"></a>unhex</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">UNHEX(str) </span><br><span class="line">将十六进制字符串转化为普通的字符串</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT UNHEX(&#x27;4D7953514C&#x27;);</span><br><span class="line">-&gt; &#x27;MySQL&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT 0x4D7953514C;</span><br><span class="line">-&gt; &#x27;MySQL&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="hex"><a href="#hex" class="headerlink" title="hex"></a>hex</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HEX(N_or_S) </span><br><span class="line">1. N_or_S 是一个数字： 返回该值的十六进制字符串</span><br><span class="line">2. N_or_S 是一个字符串： 则其中的每个字符会被转化为两个十六进制数字</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h2><h3 id="lcase"><a href="#lcase" class="headerlink" title="lcase"></a>lcase</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LCASE(str) </span><br><span class="line">LCASE() 是 LOWER()的同义词。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="lower"><a href="#lower" class="headerlink" title="lower"></a>lower</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">LOWER(str) </span><br><span class="line">返回字符串 str 以及所有根据最新的字符集映射表变为小写字母的字符 (默认为  cp1252 Latin1)。</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT LOWER(&#x27;QUADRATICALLY&#x27;);</span><br><span class="line">-&gt; &#x27;quadratically&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="ucase"><a href="#ucase" class="headerlink" title="ucase"></a>ucase</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UCASE()是UPPER()的同义词。</span><br></pre></td></tr></table></figure>
+
+<h3 id="upper"><a href="#upper" class="headerlink" title="upper"></a>upper</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">UPPER(str) </span><br><span class="line">返回字符串str， 以及根据最新字符集映射转化为大写字母的字符 (默认为cp1252 Latin1). </span><br><span class="line"></span><br><span class="line">mysql-&gt;select upper(&#x27;mysql&#x27;)</span><br><span class="line">-&gt;MYSQL</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><h3 id="cast-1"><a href="#cast-1" class="headerlink" title="cast"></a>cast</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="拼接"><a href="#拼接" class="headerlink" title="拼接"></a>拼接</h2><h3 id="contact"><a href="#contact" class="headerlink" title="contact"></a>contact</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CONCAT(str1,str2,...)   </span><br><span class="line">	连接字符串</span><br><span class="line">	</span><br><span class="line">参数转型： </span><br><span class="line">	1. 参数有 null, 返回值就是 null</span><br><span class="line">	2. 参数有 二进制字符串， 其他参数跟同转为二进制字符串</span><br><span class="line">	</span><br><span class="line">案例</span><br><span class="line">mysql-&gt;select concat(&#x27;My&#x27;, &#x27;Sql&#x27;)</span><br><span class="line">-&gt;&#x27;MySql&#x27;</span><br><span class="line">mysql-&gt;select concat(&#x27;My&#x27;, &#x27;Sql&#x27;, NULL)</span><br><span class="line">-&gt;NULL</span><br></pre></td></tr></table></figure>
+
+<h3 id="concat-ws"><a href="#concat-ws" class="headerlink" title="concat_ws"></a>concat_ws</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CONCAT_WS(separator,str1,str2,...) </span><br><span class="line">	concat 的特殊形式，即 concat_with_separator, </span><br><span class="line">特殊</span><br><span class="line">	如果分隔符为 NULL，则结果为 NULL。函数会忽略任何分隔符参数后的 NULL 值。</span><br><span class="line">	不会忽略任何空字符串。然而会忽略所有的 null</span><br><span class="line">案例</span><br><span class="line">mysql-&gt; select concat_ws(&#x27;,&#x27;, &#x27;lisi&#x27;， &#x27;zhangsan&#x27;, &#x27;wangwu&#x27;)</span><br><span class="line">-&gt;&#x27;lisi,zhangsan,wangwu&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="repeat"><a href="#repeat" class="headerlink" title="repeat"></a>repeat</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">REPEAT(str,count) </span><br><span class="line">将 str 重复 count 次，组成一个新的字符串</span><br><span class="line">返回一个由重复的字符串str 组成的字符串，字符串str的数目等于count 。 若 count &lt;= 0,则返回一个空字符串。若str 或 count 为 NULL，则返回 NULL 。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql-&gt;selct repeat(&#x27;mysql&#x27;, 3)</span><br><span class="line">-&gt;&#x27;mysqlmysqlmysql&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="截取"><a href="#截取" class="headerlink" title="截取"></a>截取</h2><h3 id="mid"><a href="#mid" class="headerlink" title="mid"></a>mid</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">MID(str,pos,len) 是 SUBSTRING(str,pos,len)的同义词。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-- 从 str 的 pos 的位置开始截取长度 len 的子字符串</span><br><span class="line">-- pos 正值[从左往右数] 负值 [从右往左数]</span><br><span class="line">-- len 省略[截取到字符串结尾], 小于1 会得到空字符串</span><br><span class="line">SUBSTRING(str,pos) , </span><br><span class="line">SUBSTRING(str,pos,len) ,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">SUBSTRING(str FROM pos) </span><br><span class="line">SUBSTRING(str FROM pos FOR len) </span><br><span class="line"></span><br><span class="line"># mysql 是从 1 开始数数的</span><br><span class="line">mysql-&gt; select substring(&#x27;mysql132456&#x27;, 5)</span><br><span class="line">-&gt;&#x27;l132456&#x27;</span><br><span class="line">mysql-&gt; select substring(&#x27;mysql123456&#x27; FROM 5)</span><br><span class="line">-&gt;&#x27;l132456&#x27;</span><br><span class="line">mysql-&gt; select substring(&#x27;mysql123456&#x27; FROM 5)</span><br><span class="line">-&gt;&#x27;l132456&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="substr"><a href="#substr" class="headerlink" title="substr"></a>substr</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SUBSTR()是 SUBSTRING()的同义词。</span><br></pre></td></tr></table></figure>
+
+<h3 id="substring-index"><a href="#substring-index" class="headerlink" title="substring_index"></a>substring_index</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">SUBSTRING_INDEX(str,delim,count) </span><br><span class="line">从 str 中截取 delim 第 count 处出现的位置，到开始或者结尾的字符串</span><br><span class="line">在定界符 delim 以及count 出现前，从字符串str返回自字符串。若count为正值,则返回最终定界符(从左边开始)左边的一切内容。若count为负值，则返回定界符（从右边开始）右边的一切内容。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># count 大于 0 。 从开始到count索引处</span><br><span class="line">mysql&gt; SELECT SUBSTRING_INDEX(&#x27;www.mysql.com&#x27;, &#x27;.&#x27;, 2);</span><br><span class="line">-&gt; &#x27;www.mysql&#x27;</span><br><span class="line"></span><br><span class="line"># count 小于 0 。 从count索引处到结尾，注意从结尾数</span><br><span class="line">mysql&gt; SELECT SUBSTRING_INDEX(&#x27;www.mysql.com&#x27;, &#x27;.&#x27;, -2);</span><br><span class="line">-&gt; &#x27;mysql.com&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="right"><a href="#right" class="headerlink" title="right"></a>right</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">RIGHT(str,len) </span><br><span class="line">从字符串str 开始，返回最右len 字符。 </span><br><span class="line"></span><br><span class="line">select right(&#x27;football&#x27;, 4) -&gt; &#x27;ball&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="left"><a href="#left" class="headerlink" title="left"></a>left</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LEFT(str,len) </span><br><span class="line">含义： 截取字符串 str 自左向右长度为 len 的子串</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="trim"><a href="#trim" class="headerlink" title="trim"></a>trim</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">TRIM([&#123;BOTH | LEADING | TRAILING&#125; [remstr] FROM] str)</span><br><span class="line">TRIM(remstr FROM] str) </span><br><span class="line"></span><br><span class="line">trim(str)  -- 删除 str 两端的空格</span><br><span class="line">trim(BOTH remstr FROM str) -- 删除 str 两端的字符串 remstr</span><br><span class="line">trim(LEADING remstr FROM str) -- 删除 str 前端的字符串 remstr</span><br><span class="line">trim(TRAILING remstr FROM str) -- 删除 str 后端[右边]的字符串 remstr</span><br><span class="line">trim(remstr FROM str) -- 删除 str 中所有的字符串 remstr</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT TRIM(&#x27;  bar   &#x27;);</span><br><span class="line"> -&gt; &#x27;bar&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT TRIM(LEADING &#x27;x&#x27; FROM &#x27;xxxbarxxx&#x27;);</span><br><span class="line">&gt; &#x27;barxxx&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT TRIM(BOTH &#x27;x&#x27; FROM &#x27;xxxbarxxx&#x27;);</span><br><span class="line"> -&gt; &#x27;bar&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT TRIM(TRAILING &#x27;xyz&#x27; FROM &#x27;barxxyz&#x27;);</span><br><span class="line"> -&gt; &#x27;barx&#x27;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="ltrim"><a href="#ltrim" class="headerlink" title="ltrim"></a>ltrim</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">LTRIM(str) </span><br><span class="line"> 删除字符串左侧的空格</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="rtrim"><a href="#rtrim" class="headerlink" title="rtrim"></a>rtrim</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">删除字符串右侧的空格</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h2><h3 id="insert"><a href="#insert" class="headerlink" title="insert"></a>insert</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">INSERT(str,pos,len,newstr) </span><br><span class="line">含义： 将 str 从 pos 位置开始长度为 len 的子串替换为 newstr 并返回</span><br><span class="line">参数：</span><br><span class="line">	pos ： 1. pos 大于 str 的长度或者小于 1 ，则返回原始字符串，2. </span><br><span class="line">	其他：1. 任意一个参数为 null ，则返回 null</span><br><span class="line">案例</span><br><span class="line">mysql&gt; SELECT INSERT(&#x27;Quadratic&#x27;, 3, 4, &#x27;What&#x27;);</span><br><span class="line">-&gt; &#x27;QuWhattic&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT INSERT(&#x27;Quadratic&#x27;, 3, 100, &#x27;What&#x27;);</span><br><span class="line"> -&gt; &#x27;QuWhat&#x27;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h3 id="lpad"><a href="#lpad" class="headerlink" title="lpad"></a>lpad</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">LPAD(str,len,padstr) </span><br><span class="line">  返回字符串 str, 其左边由字符串padstr 填补到len 字符长度。假如str 的长度大于len, 则返回值被缩短至 len 字符</span><br><span class="line">  </span><br><span class="line">理解记忆：  </span><br><span class="line"></span><br><span class="line">#hi --&gt; 00hi --&gt; ??hi</span><br><span class="line">mysql&gt; SELECT LPAD(&#x27;hi&#x27;,4,&#x27;??&#x27;);</span><br><span class="line">-&gt; &#x27;??hi&#x27;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#hi --&gt; h</span><br><span class="line">mysql&gt; SELECT LPAD(&#x27;hi&#x27;,1,&#x27;??&#x27;);</span><br><span class="line">-&gt; &#x27;h&#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="rpad"><a href="#rpad" class="headerlink" title="rpad"></a>rpad</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">回字符串str, 其右边被字符串 padstr填补至len 字符长度。假如字符串str 的长度大于 len,则返回值被缩短到与 len 字符相同长度</span><br><span class="line"></span><br><span class="line">select rpad(&#x27;hi&#x27;, 5, ?) -&gt; hi???</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="更新替换"><a href="#更新替换" class="headerlink" title="更新替换"></a>更新替换</h2><h3 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">REPLACE(str,from_str,to_str) </span><br><span class="line">返回字符串str 以及所有被字符串to_str替代的字符串from_str </span><br><span class="line"></span><br><span class="line">mysql-&gt; replace(&#x27;www.mysql.com&#x27;, &#x27;w&#x27;, &#x27;12&#x27;)</span><br><span class="line">-&gt;&#x27;121212.mysql.com&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="reverse"><a href="#reverse" class="headerlink" title="reverse"></a>reverse</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">REVERSE(str) </span><br><span class="line">返回字符串 str ，顺序和字符顺序相反。 </span><br><span class="line"></span><br><span class="line">select reverse(&#x27;abc&#x27;) -&gt; &#x27;cba&#x27;</span><br></pre></td></tr></table></figure>
+
+<h2 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h2><h3 id="space"><a href="#space" class="headerlink" title="space"></a>space</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SPACE(N) </span><br><span class="line">返回一个由 N 个间隔符号组成的字符串</span><br><span class="line"></span><br><span class="line">mysql-&gt;select space(6)</span><br><span class="line">-&gt;&#x27;      &#x27;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><h3 id="uncompress"><a href="#uncompress" class="headerlink" title="uncompress"></a>uncompress</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">对经COMPRESS()函数压缩后的字符串进行解压缩。若参数为压缩值，则结果为 NULL。这个函数要求  MySQL 已被诸如zlib 之类的压缩库编译过。否则, 返回值将始终是 NULL。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT UNCOMPRESS(COMPRESS(&#x27;any string&#x27;));</span><br><span class="line"></span><br><span class="line">        -&gt; &#x27;any string&#x27;</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT UNCOMPRESS(&#x27;any string&#x27;);</span><br><span class="line"></span><br><span class="line">        -&gt; NULL</span><br><span class="line"></span><br><span class="line">UNCOMPRESSED_LENGTH(compressed_string) </span><br><span class="line">返回压缩字符串压缩前的长度。 </span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT UNCOMPRESSED_LENGTH(COMPRESS(REPEAT(&#x27;a&#x27;,30)));</span><br><span class="line"></span><br><span class="line">        -&gt; 30</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h2><h3 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. 运算符 like</span><br></pre></td></tr></table></figure>
+
+<h3 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp"></a>strcmp</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">STRCMP(expr1,expr2)</span><br><span class="line">比较两个字符串</span><br><span class="line">expr1 = expr2 ： 返回 0</span><br><span class="line">expr1 &gt; expr2 :  返回 1</span><br><span class="line">expr1 &lt; expr2 :  返回 -</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT STRCMP(&#x27;text&#x27;, &#x27;text2&#x27;);</span><br><span class="line">-&gt; -1</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT STRCMP(&#x27;text2&#x27;, &#x27;text&#x27;);</span><br><span class="line">-&gt; 1</span><br><span class="line"></span><br><span class="line">mysql&gt; SELECT STRCMP(&#x27;text&#x27;, &#x27;text&#x27;);</span><br><span class="line">-&gt; 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="字符串-set"><a href="#字符串-set" class="headerlink" title="字符串 set"></a>字符串 set</h1><h2 id="export-set"><a href="#export-set" class="headerlink" title="export_set"></a>export_set</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">EXPORT_SET(bits,on,off[,separator[,number_of_bits]]) </span><br><span class="line"></span><br><span class="line">mysql-&gt;EXPORT_SET(5, &#x27;Y&#x27;, &#x27;N&#x27;, &#x27;,&#x27;, 4)</span><br><span class="line">1. 第一个参数 6 ： 的二进制是 101 </span><br><span class="line">2. 第二个参数 Y ： 将二进制中 1 改为 Y</span><br><span class="line">3. 第二个参数 N ： 将二进制中 0 改为 N</span><br><span class="line">4，第四个参数 4 ： 将从 5 的二进制串中获取 4 个bit 位的转换值，但是 5 只有三位，所以补 0</span><br><span class="line">   即 101 变为 0101 ==》 然后替换 NYNY</span><br><span class="line">5. 将结果逆序放入到结果中，即结果为 YNYN, </span><br><span class="line">6. 其中指定分隔符是 , 即最后的接故事 &#x27;Y,N,Y,N&#x27;</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h2 id="make-set"><a href="#make-set" class="headerlink" title="?make_set"></a>?make_set</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">MAKE_SET(bits,str1,str2,...) </span><br><span class="line">参数索引： </span><br><span class="line">    bits: 0</span><br><span class="line">    str1: 1</span><br><span class="line">    str2: 2</span><br><span class="line">    ...</span><br><span class="line">含义： 根据指定的索引，生成 set 字符串</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="不懂"><a href="#不懂" class="headerlink" title="不懂"></a>不懂</h1><p><img src="F:\1=学习笔记\3=数据库\mysql\image-20231214202917605.png" alt="image-20231214202917605"></p>
+<h1 id=""><a href="#" class="headerlink" title="&#x3D;&#x3D;"></a>&#x3D;&#x3D;</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://sunshulei456.github.io/2024/04/21/mysql/mysql%20%E5%87%BD%E6%95%B0/" data-id="clv9j5m7x0000f4tibhnvbuu3" data-title="mysql 函数" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2024/04/21/%E2%80%9C%E6%88%91%E7%9A%84%E6%96%B0%E5%B8%96%E5%AD%90%E2%80%9D/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          “我的新帖子”
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2024/04/21/mysql/mysql%20%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">mysql 安装配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/04/21/%E2%80%9C%E6%88%91%E7%9A%84%E6%96%B0%E5%B8%96%E5%AD%902%E2%80%9D/">“我的新帖子2”</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/21/%E2%80%9C%E6%88%91%E7%9A%84%E6%96%B0%E5%B8%96%E5%AD%90%E2%80%9D/">“我的新帖子”</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/21/mysql/mysql%20%E5%87%BD%E6%95%B0/">mysql 函数</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/21/mysql/mysql%20%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/">mysql 安装配置</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/21/mysql/mysql%20%E6%9D%83%E9%99%90%E5%88%86%E7%A6%BB/">mysql 权限分离</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
